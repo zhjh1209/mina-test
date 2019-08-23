@@ -22,7 +22,7 @@ public class MinaTimeTest {
     public static void main(String[] args) throws IOException {
         IoAcceptor acceptor = new NioSocketAcceptor();
         acceptor.getFilterChain().addLast("logger", new LoggingFilter());
-        StxEtxLineProtocolFactory codec = new StxEtxLineProtocolFactory(Charset.forName("GB2312"), 2048, "STX", "ETX");
+        StxEtxLineProtocolFactory codec = new StxEtxLineProtocolFactory(Charset.forName("GB2312"), 2048, "\002", "\003");
 
         acceptor.getFilterChain().addLast("codec", new ProtocolCodecFilter(codec));
 

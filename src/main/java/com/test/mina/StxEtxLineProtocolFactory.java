@@ -12,9 +12,6 @@ public class StxEtxLineProtocolFactory implements ProtocolCodecFactory {
     private final int bufferLength;
     private final String stx;
     private final String etx;
-    public StxEtxLineProtocolFactory() {
-        this(Charset.forName("UTF-8"), 2048, "STX", "ETX");
-    }
     public StxEtxLineProtocolFactory(Charset charset, int bufferLength, String stx, String etx) {
         if (charset == null) {
             throw new IllegalArgumentException("charset must been set");
